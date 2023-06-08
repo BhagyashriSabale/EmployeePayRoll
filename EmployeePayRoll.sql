@@ -54,3 +54,22 @@ GROUP BY gender;
 SELECT gender, COUNT(*) AS employee_count
 FROM employee_payroll
 GROUP BY gender;
+
+---------------------UC8------------------------------
+ALTER TABLE employee_payroll
+ADD department VARCHAR(50) NOT NULL DEFAULT 'Not Specified';
+ALTER TABLE employee_payroll
+ADD phone VARCHAR(20) NULL,
+    address VARCHAR(100) NULL;
+
+--------------------------UC9-----------------------------
+ALTER TABLE employee_payroll
+ADD basic_pay DECIMAL(10, 2),
+    deductions DECIMAL(10, 2),
+    taxable_pay DECIMAL(10, 2),
+    income_tax DECIMAL(10, 2),
+    net_pay DECIMAL(10, 2);
+
+--------------------------UC10------------------------------
+INSERT INTO employee_payroll (name, salary, start_date, gender, phone, address, department)
+VALUES ('Terissa', 5000.00, '2023-01-01', 'F', '1234567890', 'Address', 'Sales and Marketing');
